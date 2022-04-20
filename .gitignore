@@ -1,0 +1,4 @@
+gstreamer-1.0/
+*.pro.user
+android/obj/
+android/gst-build-armeabi-v7a/
