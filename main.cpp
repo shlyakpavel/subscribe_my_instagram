@@ -33,8 +33,18 @@ void SetPlaying::run() {
     }
 }
 
+extern "C" void gst_plug(){
+        GST_PLUGIN_STATIC_DECLARE(videotestsrc);
+        GST_PLUGIN_STATIC_DECLARE(opengl);
+        GST_PLUGIN_STATIC_DECLARE(qmlgl);
+        GST_PLUGIN_STATIC_REGISTER(videotestsrc);
+        GST_PLUGIN_STATIC_REGISTER(opengl);
+        GST_PLUGIN_STATIC_REGISTER(qmlgl);
+}
+
 int main(int argc, char *argv[])
 {
+    gst_plug();
     int ret;
     gst_init(&argc, &argv);
     {
